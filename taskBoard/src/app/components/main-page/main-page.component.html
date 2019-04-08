@@ -1,0 +1,16 @@
+
+
+<div class="boards-wrapper">
+    <div class="create-board board" (click)="createNewBoard()">
+        <span class="create-board__text">Create a new board...</span>
+    </div>
+
+    <div class="create-board board" (click)="deleteLocalStorage()">
+        <span class="create-board__text">Delete local storage...</span>
+    </div>
+    
+    <div class="board" *ngFor="let board of boardsList$; let i = index" [routerLink]="['/task-board', board.id]" routerLinkActive="task-board--active" >
+      <span class="board__text">{{board.name}}</span>
+      <span (click)="editBoard(i)" class="board__edit">Edit</span>
+    </div>
+</div>

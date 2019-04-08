@@ -1,0 +1,21 @@
+<p>
+  you are at boardID number: {{boardId}}
+</p>
+
+<div class="notes-wrapper">
+  <div class="create-note note" (click)="createNewNote()">
+    <span class="create-note__text">Create a new note...</span>
+  </div>
+
+  <div class="note" *ngFor="let note of notesList$; let i = index" [routerLink]="['/task-note', note.id]"
+    routerLinkActive="task-note--active">
+    <span class="board__text">{{note.name}}</span>
+
+    <!-- send a param Child -->
+    <app-note-row [noteText]="note.id"  (messageEvent)="receiveMessageFromChild($event)"></app-note-row>
+
+    <p>childs message: {{message}}</p>
+
+    <span (click)="editNote(i)" class="note__edit">Edit</span>
+  </div>
+</div>

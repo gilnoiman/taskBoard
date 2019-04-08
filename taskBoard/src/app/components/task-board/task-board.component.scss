@@ -1,0 +1,40 @@
+.notes-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: Arial, Helvetica, sans-serif;
+
+
+
+    .note {
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        height: 100px;
+        width: calc(100%/3 - 50px);
+        border-radius: 5px;
+        margin: 25px;
+        cursor: pointer;
+        background-color: #4971b7;
+        flex-direction: column;
+        position: relative;
+
+        &.create-note {
+            background-color: #a5a4a4;
+        }
+
+        .note__edit {
+            display: block;
+            font-size: 12px;
+            color:#ac3434;
+            position: absolute;
+            bottom: 0;
+            margin-bottom: 10px;
+            background: #9a9fc2;
+            padding: 2px 15px;
+            border-radius: 5px;
+            //display: none;
+        }
+    }
+}

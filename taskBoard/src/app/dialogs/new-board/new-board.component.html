@@ -1,0 +1,13 @@
+<!-- <h1 mat-dialog-title>Hi {{data.name}}</h1> -->
+<h1 mat-dialog-title>Create a new board</h1>
+<div class="new-board-dialog">
+    <div mat-dialog-content>
+        <mat-form-field class="form-filed">
+            <input matInput [(ngModel)]="boardName" placeholder="board name">
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">Cancel</button>
+        <button mat-button [mat-dialog-close]="boardName" cdkFocusInitial>Ok</button>
+    </div>
+</div>
